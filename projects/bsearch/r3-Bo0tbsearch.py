@@ -88,3 +88,24 @@ def BinarySearch(MyList,Target):
             return mid
     return "Number Not Found"
 #print BinarySearch(MyList,Target)
+
+
+''' Barry's bsearch function '''
+
+def bsearch(l, s):
+	found = False
+	startSearchParameter = 0
+	endSearchParameter = len(l) - 1
+	searchValue = s
+	while ((not found) and (startSearchParameter <= endSearchParameter)):
+		middleValue = ((startSearchParameter+endSearchParameter)/2)
+		if searchValue == l[middleValue]:
+			found = True
+			return middleValue
+		else:	
+			if searchValue < l[middleValue]:
+				endSearchParameter = middleValue - 1
+			else:
+				startSearchParameter = middleValue + 1
+	if not found:
+		return -1
